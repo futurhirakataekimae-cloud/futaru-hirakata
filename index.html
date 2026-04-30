@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>児童発達支援 フタール枚方駅前</title>
+  <style>
+    :root{
+      --orange:#ff9f43;
+      --orange2:#ffbf75;
+      --pink:#f7a6bd;
+      --yellow:#ffd95a;
+      --blue:#8ed8f8;
+      --green:#a6ef8c;
+      --mint:#34c759;
+      --cream:#fff9df;
+      --paper:#fffdf3;
+      --text:#2f2f2f;
+      --muted:#6a6a6a;
+      --line:#f0d9ad;
+      --shadow:0 14px 30px rgba(146,106,55,.14);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;background:var(--cream);color:var(--text);line-height:1.75;padding-bottom:82px}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,253,243,.96);border-bottom:1px solid #f4deb4;backdrop-filter:blur(10px)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-weight:900;color:#e67622;font-size:20px;line-height:1.25}.logo span{display:block;color:var(--muted);font-size:12px}
+    .menu{display:flex;gap:10px;align-items:center;font-size:13px;font-weight:800}.menu a{padding:8px 10px;border-radius:999px}.menu a:hover{background:#fff0ca;color:#e67622}.line-mini{background:#19b75a!important;color:white!important;padding:10px 16px!important}
+    .hero{background:linear-gradient(180deg,#fff3cf 0%,#fffdf3 72%,#fff9df 100%);position:relative;overflow:hidden}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#fff4c2;opacity:.9}.hero:before{width:320px;height:320px;left:-120px;top:-80px}.hero:after{width:260px;height:260px;right:-90px;bottom:-100px}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;padding:70px 20px}
+    .badge{display:inline-block;background:var(--orange);color:white;font-weight:900;padding:9px 18px;border-radius:999px;margin-bottom:16px;box-shadow:var(--shadow)}
+    h1{font-size:clamp(38px,6vw,64px);line-height:1.12;margin:0 0 16px;color:#e67622;font-weight:950;letter-spacing:-.03em}
+    .lead{font-size:23px;font-weight:900;margin:0 0 10px}.sublead{font-size:17px;margin:0 0 26px;color:#454545}.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;padding:15px 26px;border-radius:999px;font-weight:950;font-size:18px;box-shadow:var(--shadow);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-line{background:#20b65a;color:#fff}.btn-phone{background:white;color:#e67622;border:2px solid var(--orange)}
+    .hero-card{background:white;border-radius:36px;box-shadow:var(--shadow);padding:22px;position:relative;overflow:hidden}.hero-card .photo{height:310px;border-radius:26px;background:linear-gradient(135deg,#fff0bf,#ffe3ea 45%,#dff8ff);display:flex;align-items:center;justify-content:center;position:relative}.kids{font-size:92px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.08))}.hero-note{text-align:center;color:var(--muted);font-size:13px;margin:12px 0 0}
+    section{padding:64px 0}h2{font-size:clamp(28px,4vw,42px);line-height:1.28;text-align:center;margin:0 0 24px;color:#e67622;font-weight:950}.center-note{text-align:center;color:var(--muted);margin:-8px auto 30px;max-width:760px}.card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}.worry-grid,.power-grid,.therapy-grid,.feature-grid,.flow-grid,.faq-grid{display:grid;gap:16px}.worry-grid{grid-template-columns:repeat(3,1fr);font-weight:900}.worry-item{background:#fff0ca;border-radius:18px;padding:18px;font-size:18px}.power-grid{grid-template-columns:repeat(5,1fr)}.power{min-height:145px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font-weight:950;box-shadow:var(--shadow)}.power:nth-child(1){background:#f7bfd0}.power:nth-child(2){background:#fff0a8}.power:nth-child(3){background:#ffd659}.power:nth-child(4){background:#9de4ff}.power:nth-child(5){background:#baf79f}.flow-card{background:white;border:3px solid #ffc5aa;border-radius:28px;box-shadow:var(--shadow);padding:26px}.timeline{max-width:620px;margin:0 auto}.time-row{display:grid;grid-template-columns:90px 1fr;gap:16px;border-left:3px dotted #d9b88b;margin-left:45px;padding:8px 0}.time{font-weight:950;color:#e67622;text-align:right}.therapy-grid{grid-template-columns:repeat(3,1fr)}.therapy{background:white;border-radius:24px;box-shadow:var(--shadow);padding:26px;border-top:8px solid var(--orange)}.therapy:nth-child(2){border-top-color:#ff6f6f}.therapy:nth-child(3){border-top-color:#47c763}.therapy h3,.feature h3{margin:0 0 8px;font-size:22px}.feature-grid{grid-template-columns:repeat(2,1fr)}.feature{background:#fffef8;border-radius:22px;box-shadow:var(--shadow);padding:24px;border-left:8px solid var(--orange2)}.faq-grid{grid-template-columns:repeat(2,1fr)}.faq{background:white;border-radius:24px;box-shadow:var(--shadow);padding:24px}.q{font-size:22px;font-weight:950;color:#d86f9e;margin-bottom:8px}.a{font-weight:700}.info-table{background:white;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.info-row{display:grid;grid-template-columns:190px 1fr;border-bottom:1px solid #f2e2c6}.info-row:last-child{border-bottom:none}.info-label{background:#ffd6d0;font-weight:950;padding:16px}.info-value{padding:16px}.cta-card{background:linear-gradient(135deg,#ff9f43,#ffbc5c);color:white;border-radius:36px;box-shadow:var(--shadow);padding:46px 24px;text-align:center}.cta-card h2{color:white;font-size:clamp(34px,5vw,52px);margin-bottom:10px}.cta-card p{font-size:20px;margin:0 0 22px}.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.map-placeholder{background:#f3f0e8;border-radius:24px;min-height:290px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:22px;border:2px dashed #d9c299}.contact-box{background:white;border-radius:24px;box-shadow:var(--shadow);padding:28px}.tel{font-size:34px;font-weight:950;color:#222;line-height:1.2}.subtel{font-size:20px;font-weight:900;margin-top:10px}.note{font-size:13px;color:var(--muted)}footer{background:#fffdf3;text-align:center;padding:34px 20px;color:var(--muted);font-size:14px}.fixed-line{position:fixed;left:0;right:0;bottom:0;background:white;border-top:1px solid #ddd;padding:12px;z-index:100;box-shadow:0 -5px 16px rgba(0,0,0,.08)}.fixed-line a{display:flex;justify-content:center;align-items:center;background:#20b65a;color:white;border-radius:999px;padding:15px;font-weight:950;font-size:17px}
+    @media (min-width:769px){body{padding-bottom:0}.fixed-line{display:none}}
+    @media (max-width:960px){.menu{display:none}.hero-inner,.access-grid{grid-template-columns:1fr}.power-grid{grid-template-columns:repeat(3,1fr)}.therapy-grid,.feature-grid,.faq-grid{grid-template-columns:1fr}.worry-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.hero-inner{padding:44px 20px}.buttons{flex-direction:column}.btn{width:100%}section{padding:46px 0}.card{padding:24px}.worry-grid,.power-grid{grid-template-columns:1fr}.power{border-radius:24px;min-height:auto}.info-row{grid-template-columns:1fr}.info-label{padding-bottom:8px}.info-value{padding-top:8px}.tel{font-size:28px}.time-row{margin-left:10px;grid-template-columns:70px 1fr}.hero-card .photo{height:230px}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="logo">フタール枚方駅前<span>児童発達支援事業所</span></a>
+    <nav class="menu">
+      <a href="#power">5つの力</a><a href="#flow">1日の流れ</a><a href="#therapy">療育内容</a><a href="#feature">特徴</a><a href="#faq">Q&A</a><a href="#access">アクセス</a><a class="line-mini" href="https://lin.ee/uTiiKiW">LINE相談</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section id="top" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">枚方市駅②出口より徒歩約3分｜見学・ご相談受付中！</div>
+        <h1>小学校に上がる前に、<br>今できる準備を。</h1>
+        <p class="lead">未就学児・就学前のお子さまのための児童発達支援</p>
+        <p class="sublead">フタール枚方駅前では、就学前につけたい力を育むプログラムがあります。落ち着き・ことば・集団行動・生活自立など、小学校生活に向けて必要な力を丁寧に育てます。</p>
+        <div class="buttons"><a class="btn btn-line" href="https:/lin.ee/uTiiKiW"/>LINEで見学予約</a><a class="btn btn-phone" href="tel:072-896-9570">☎ 072-896-9570</a></div>
+      </div>
+      <div class="hero-card">
+        <div class="photo">
+  <img src="https://t3.ftcdn.net/jpg/06/98/62/76/360_F_698627684_YzQz0zj0X103OBmniMSiQnPlChgKMccj.jpg" style="width:100%; border-radius:20px;">
+</div></p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container"><div class="card"><h2>こんなお悩みありませんか？</h2><div class="worry-grid"><div class="worry-item">● 落ち着きがない</div><div class="worry-item">● 就学が不安</div><div class="worry-item">● 友達との関わりが心配</div><div class="worry-item">● 集団行動が苦手</div><div class="worry-item">● 言葉の遅れが気になる</div><div class="worry-item">● 身の回りのことが苦手</div></div></div></div>
+  </section>
+  <section id="power"><div class="container"><h2>私たちが育てる5つの力</h2><p class="center-note">チラシでお伝えしている、就学前につけたい力を5つに整理しています。</p><div class="power-grid"><div class="power">集団<br>参加力</div><div class="power">コミュニ<br>ケーション力</div><div class="power">感情・行動<br>調整力</div><div class="power">学習<br>基礎力</div><div class="power">生活<br>自立力</div></div></div></section>
+  <section id="flow"><div class="container"><h2>平日の一日の流れ</h2><div class="flow-card"><div class="timeline"><div class="time-row"><div class="time">10:00</div><div>来所・朝の会・さんぽ</div></div><div class="time-row"><div class="time">11:00</div><div>個別療育（チャレンジ）</div></div><div class="time-row"><div class="time">12:00</div><div>お昼ご飯</div></div><div class="time-row"><div class="time">13:00</div><div>お昼寝</div></div><div class="time-row"><div class="time">14:00</div><div>自由あそび</div></div><div class="time-row"><div class="time">15:00</div><div>おやつ</div></div><div class="time-row"><div class="time">16:00</div><div>集団療育（わくわく）・おわりの会</div></div><div class="time-row"><div class="time">17:00</div><div>おむかえ</div></div></div></div></div></section>
+  <section id="therapy"><div class="container"><h2>療育内容</h2><p class="center-note">お子さま一人ひとりの発達や特性に合わせて、個別支援と集団活動を組み合わせた療育を行います。</p><div class="therapy-grid"><div class="therapy"><h3>生活スキル</h3><p><strong>食事・排泄・片付け</strong><br>1日を通して、「自分のことは自分でできるよ！」ということを増やしていきます。</p></div><div class="therapy"><h3>個別療育</h3><p><strong>ことば・かず</strong><br>小学校に上がる前に、椅子に座って課題に取り組むこと・集中力をつけます。</p></div><div class="therapy"><h3>集団療育</h3><p><strong>コミュニケーション</strong><br>年齢の近い友達と活動しながら、約束・順番・ルールの理解などを育てます。</p></div></div></div></section>
+  <section id="feature"><div class="container"><h2>フタール枚方駅前の特徴</h2><div class="feature-grid"><div class="feature"><h3>サービス提供時間内なら柔軟に対応</h3><p>来所・帰宅時間はご家庭に合わせて調整可能です。</p></div><div class="feature"><h3>長時間利用が可能</h3><p>10:00〜17:00までの長時間利用が可能です。</p></div><div class="feature"><h3>メリハリのある支援</h3><p>ゆったり過ごす時間と療育の時間を分けて支援します。</p></div><div class="feature"><h3>少人数制で丁寧に見守り</h3><p>1日10名までの少人数制で、お子さま一人ひとりを丁寧に見守ります。</p></div><div class="feature"><h3>保護者様にも安心</h3><p>安心してご自身の時間をお過ごしいただけます。</p></div></div></div></section>
+  <section id="faq"><div class="container"><h2>よくある質問 Q&A</h2><div class="faq-grid"><div class="faq"><div class="q">Q1. 開始の時間は決まっているのですか？</div><div class="a">園、学校などが終わった時間帯に来ていただいて大丈夫です。</div></div><div class="faq"><div class="q">Q2. 利用料金はどのくらいかかりますか？</div><div class="a">おやつをご利用の場合、1回50円を実費で頂戴しております（口座引き落とし）。アレルギーがある場合は持参も可能です。イベント実施時に別途費用をご負担いただく場合がございます。</div></div><div class="faq"><div class="q">Q3. 利用するにはどうすればいいですか？</div><div class="a">ご利用には「受給者証」が必要です。取得方法や手続きについては丁寧にご案内しますのでご安心ください。</div></div><div class="faq"><div class="q">Q4. 毎日通わないといけませんか？</div><div class="a">ご利用頻度はご家庭のご希望に合わせて調整可能です。週1回からのご利用も可能です。</div></div><div class="faq"><div class="q">Q5. 療育はどのような内容ですか？</div><div class="a">お子さま一人ひとりの発達や特性に合わせて、身辺自立など個別支援と集団活動を組み合わせた療育を行っています。</div></div><div class="faq"><div class="q">Q6. 長時間預けても大丈夫ですか？</div><div class="a">はい、大丈夫です。お子さまの負担にならないよう休息や遊びの時間も取り入れながら過ごします。通う日数、曜日、利用時間も保護者様に合わせていただけます。</div></div><div class="faq"><div class="q">Q7. 見学はできますか？</div><div class="a">はい、随時見学を受け付けています。実際の雰囲気をご覧いただいた上でご検討いただけます。</div></div><div class="faq"><div class="q">Q8. 送迎はありますか？</div><div class="a">当事業所は駅前立地のため送迎は行っておりませんが、通いやすい環境となっております。※送迎は保護者の方にお願いしています。</div></div></div></div></section>
+  <section id="contact"><div class="container"><div class="cta-card"><p>まずは見学だけでも大丈夫です。</p><h2>見学・ご相談受付中！</h2><p>お気軽にご相談ください。</p><div class="buttons" style="justify-content:center"><a class="btn btn-line" href="https://lin.ee/uTiiKiW">LINEで見学予約</a><a class="btn btn-phone" href="tel:072-896-9570">☎ 072-896-9570</a></div><p class="note" style="color:white;margin-top:16px">受付時間 平日 9:30〜17:30</p></div></div></section>
+  <section id="access"><div class="container"><h2>施設情報・アクセス</h2><div class="access-grid"><div class="contact-box"><p><strong>児童発達支援事業所</strong></p><h3 style="font-size:30px;margin:0 0 10px">フタール枚方駅前</h3><p>大阪府枚方市岡東町14番44号 雲川ビル5F</p><p>京阪電車 枚方市駅②番出口より 徒歩約3分</p><p class="tel">072-896-9570</p><p class="note">受付時間 平日 9:30〜17:30</p><p class="subtel">070-1803-1866</p><p class="note">担当：園内（そのうち）</p><p class="note">1階に「いい部屋ネット」さんが入居しているビルの5階です。</p></div><div class="map-placeholder" style="padding:0; overflow:hidden;">
+<iframe
+  src="https://www.google.com/maps?q=大阪府枚方市岡東町14番44号 雲川ビル5F&output=embed"
+  width="100%"
+  height="100%"
+  style="border:0; width:100%; height:100%; min-height:420px; border-radius:24px;"
+  allowfullscreen=""
+  loading="lazy">
+</iframe>
+</div></div></div><div class="info-table" style="margin-top:22px"><div class="info-row"><div class="info-label">対象児</div><div class="info-value">未就学児／児童発達支援の支給決定を受けている、または予定のお子さま</div></div><div class="info-row"><div class="info-label">営業日・時間</div><div class="info-value">平日 10:00〜17:00<br>祝日／長期休み 10:00〜16:00</div></div><div class="info-row"><div class="info-label">休業日</div><div class="info-value">土・日・年末年始</div></div></div></div></section>
+<section id="sns">
+  <div class="container">
+    <h2>LINE・Instagram</h2>
+    <p class="center-note">見学予約・ご相談はLINEから。教室の雰囲気はInstagramでもご確認いただけます。</p>
+
+    <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
+      <div style="background:white; padding:24px; border-radius:24px; box-shadow:0 14px 30px rgba(146,106,55,.14); text-align:center;">
+        <h3>LINE</h3>
+        <img src="line_qr.png" style="width:180px; max-width:100%;">
+        <p>見学予約・ご相談はこちら</p>
+      </div>
+
+      <div style="background:white; padding:24px; border-radius:24px; box-shadow:0 14px 30px rgba(146,106,55,.14); text-align:center;">
+        <h3>Instagram</h3>
+        <img src="insta_qr.png" style="width:180px; max-width:100%;">
+        <p>教室の様子を発信しています</p>
+      </div>
+    </div>
+  </div>
+</section></main>
+<footer><p><strong>フタール枚方駅前</strong></p><p>大阪府枚方市岡東町14番44号 雲川ビル5F</p><p>☎ 072-896-9570 ／ 070-1803-1866</p></footer>
+<div class="fixed-line"><a href="https://lin.ee//uTiiKiW">LINEで見学予約・相談する</a></div>
+</body>
+</html>
